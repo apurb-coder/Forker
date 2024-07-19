@@ -14,7 +14,7 @@ import FooterImage from "../assets/OBJECTS_lpey0b.png"
 const UpperFooter = () => {
   return (
     <div className="relative mt-16 text-[#3d3d3d]">
-      <div className="w-[67%] flex justify-center rounded-lg mx-auto border-[#ababab] border-[1px] p-12 space-x-7">
+      <div className="w-[67%] flex justify-center rounded-lg mx-auto border-[#ababab] border-[1px] p-16 space-x-7">
         {/* TODO: NewsLetter */}
         <img src={FooterImage} alt="footerimage" className="w-[30%]" />
         <div className="space-y-5">
