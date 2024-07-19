@@ -3,7 +3,7 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const RecentPost = () => {
-  
+  //Impotant 
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Recent Posts</div>

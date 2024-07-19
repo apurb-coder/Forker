@@ -1,6 +1,7 @@
 import React from 'react'
 
 const HeroSection = () => {
+  // Important
   return (
     <div className="flex">
       {/* box-1 */}
