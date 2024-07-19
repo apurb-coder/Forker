@@ -12,6 +12,7 @@ const Blogs = () => {
             Articles covering the most recent updates and advancements
           </p>
         </div>
+        {/* TODO: Recent Post */}
       </div>
     </div>
   );
