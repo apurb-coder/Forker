@@ -3,7 +3,7 @@ import FrokerLogo from '../assets/frokerLogo.png'
 
 const NavBar = () => {
   return (
-    <div className="flex justify-between items-center px-16 py-3">
+    <div className="sticky top-0 flex justify-between items-center px-16 py-3">
       <img src={FrokerLogo} alt="logo" className="w-[7.1875rem] h-[3.5rem]" />
       <ul className='flex space-x-16 text-[#F76f32] text-[19.2px] font-semibold'>
         <li>
