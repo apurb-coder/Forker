@@ -12,9 +12,9 @@ import QrCode from "../assets/froker-1-3-10_pb9yln.jpg"
 
 const UpperFooter = () => {
   return (
-    <div className="">
+    <div className="relative">
       <div>{/* TODO: NewsLetter */}</div>
-      <div className="flex justify-around items-center mb-16">
+      <div className="flex justify-evenly items-center mb-9 pt-[4%]">
         <img src={FrokerLogo} alt="frokerlogo" className="w-[168px] h-[82px]" />
         <div className="space-y-3">
           <h4 className="text-[#F76f32] font-semibold text-2xl">Quicklink</h4>

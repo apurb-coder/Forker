@@ -7,7 +7,7 @@ const Footer = () => {
       <UpperFooter />
       <div className="relative flex justify-center items-center">
         <img src={footerVector} alt="footer" className="min-w-full"/>
-        <div className=" absolute bottom-5 text-white">
+        <div className="absolute top-[60%] text-center text-white">
           © 2024 Arroz Technology. All rights reserved
         </div>
       </div>
