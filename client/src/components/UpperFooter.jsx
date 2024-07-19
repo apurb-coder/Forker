@@ -13,7 +13,7 @@ import FooterImage from "../assets/OBJECTS_lpey0b.png"
 
 const UpperFooter = () => {
   return (
-    <div className="relative mt-16">
+    <div className="relative mt-16 text-[#3d3d3d]">
       <div className="w-[67%] flex justify-center rounded-lg mx-auto border-[#ababab] border-[1px] p-12 space-x-7">
         {/* TODO: NewsLetter */}
         <img src={FooterImage} alt="footerimage" className="w-[30%]" />
@@ -28,7 +28,9 @@ const UpperFooter = () => {
               placeholder="Enter your email"
               className="border-[#ababab] border-[1px] w-[70%] rounded-l-full pl-5 focus:outline-none"
             />
-            <button className="bg-[#fe8849] text-white cursor-pointer w-[30%] rounded-r-full">Subscribe</button>
+            <button className="bg-[#fe8849] text-white cursor-pointer w-[30%] rounded-r-full">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
