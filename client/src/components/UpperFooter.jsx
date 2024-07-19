@@ -9,11 +9,29 @@ import FaceBookLogo from "../assets/facebook.svg";
 import InstaGramLogo from "../assets/instagram.svg";
 import YoutubeLogo from "../assets/youtube.svg";
 import QrCode from "../assets/froker-1-3-10_pb9yln.jpg"
+import FooterImage from "../assets/OBJECTS_lpey0b.png"
 
 const UpperFooter = () => {
   return (
-    <div className="relative">
-      <div>{/* TODO: NewsLetter */}</div>
+    <div className="relative mt-16">
+      <div className="w-[67%] flex justify-center rounded-lg mx-auto border-[#ababab] border-[1px] p-12 space-x-7">
+        {/* TODO: NewsLetter */}
+        <img src={FooterImage} alt="footerimage" className="w-[30%]" />
+        <div className="space-y-5">
+          <div className="text-[#3d3d3d] text-2xl font-semibold">
+            Subscribe to our newsletter to get the latest updates and news
+          </div>
+          <div className="flex justify-center h-[45%]">
+            <input
+              type="email"
+              name="newsletter"
+              placeholder="Enter your email"
+              className="border-[#ababab] border-[1px] w-[70%] rounded-l-full pl-5 focus:outline-none"
+            />
+            <button className="bg-[#fe8849] text-white cursor-pointer w-[30%] rounded-r-full">Subscribe</button>
+          </div>
+        </div>
+      </div>
       <div className="flex justify-evenly items-center mb-9 pt-[4%]">
         <img src={FrokerLogo} alt="frokerlogo" className="w-[168px] h-[82px]" />
         <div className="space-y-3">
@@ -85,7 +103,8 @@ const UpperFooter = () => {
               <img src={InstaGramLogo} alt="instagram" />
             </a>
             <a href="https://www.youtube.com/@frokerofficial">
-            <img src={YoutubeLogo} alt="youtube" /></a>
+              <img src={YoutubeLogo} alt="youtube" />
+            </a>
           </div>
         </div>
         <div className="space-y-3">
