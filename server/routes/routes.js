@@ -10,6 +10,8 @@ TODO:
 * popular posts
 * pagination api calls, number of pages
 * likes/dislikes handlers
+
+
 */
 router.post('/posts', (req,res)=>{
 

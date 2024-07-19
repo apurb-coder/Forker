@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const blogPostSchema = new mongoose.Schema({
+  BlogNumber:{
+    type: Number,
+    required: true,
+    unique: true,
+  },
   title: {
     type: String,
     required: true,
