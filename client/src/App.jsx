@@ -5,7 +5,7 @@ import DiscoverFroker from "./pages/DiscoverFroker.jsx"
 import Blogs from "./pages/Blogs.jsx"
 import NavBar from "./components/NavBar.jsx"
 import Footer from './components/Footer.jsx'
-import UpperFooter from './components/UpperFooter.jsx'
+
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/froker" element={<DiscoverFroker/>} />
         <Route path="/blogs" element={<Blogs/>} />
       </Routes>
-      <UpperFooter/>
+     
       <Footer />
     </div>
   );
