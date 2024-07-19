@@ -9,7 +9,7 @@ import UpperFooter from './components/UpperFooter.jsx'
 
 const App = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen flex flex-col'>
       <NavBar/>
       <Routes>
         <Route path="/" element={<Home/>} />

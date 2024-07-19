@@ -12,7 +12,7 @@ import QrCode from "../assets/froker-1-3-10_pb9yln.jpg"
 
 const UpperFooter = () => {
   return (
-    <div>
+    <div className="m-10">
       <div>{/* TODO: NewsLetter */}</div>
       <div className="flex justify-around mb-16">
         <img src={FrokerLogo} alt="frokerlogo" className="w-[168px] h-[82px]" />
@@ -84,9 +84,8 @@ const UpperFooter = () => {
             <a href="https://www.instagram.com/frokerofficial/" target="_blank">
               <img src={InstaGramLogo} alt="instagram" />
             </a>
-            <a href="https://www.youtube.com/@frokerofficial" target="_blank">
-              <img src={YoutubeLogo} alt="youtube" />
-            </a>
+            <a href="https://www.youtube.com/@frokerofficial">
+            <img src={YoutubeLogo} alt="youtube" /></a>
           </div>
         </div>
         <div className="space-y-3">
