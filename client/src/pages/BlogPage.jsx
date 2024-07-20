@@ -17,7 +17,7 @@ const BlogPage = () => {
       {/* articls image */}
       <div className="relative rounded-[2rem]">
         <img
-          src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1714712971/Screenshot_2024-05-03_103708_dx4yto.png"
+          src="https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="article Img"
           className="rounded-[2rem]"
         />
@@ -81,9 +81,67 @@ const BlogPage = () => {
           </div>
         </div>
         <div class="quoteby"></div>
-        <div class="para1"><br/><div><b>Crafting Compelling Content with AI Writing Assistants</b> <br/>Struggling to find the right words for your social media posts? AI writing assistants are here to save the day! These intelligent tools analyze your brand's voice, suggest relevant hashtags, and even provide content ideas based on trending topics. Whether you're drafting a captivating caption or brainstorming ideas for your next campaign, AI writing assistants empower you to create content that resonates with your audience effortlessly.</div><br/></div>
-        <div class="para2"><br/><div><b>Analyzing Performance Metrics with AI Analytics Tools</b><br/>Understanding your social media performance is key to refining your strategy and maximizing your ROI. AI analytics tools take the guesswork out of data analysis by providing actionable insights into your audience demographics, engagement metrics, and content performance. From identifying top-performing posts to predicting future trends, these tools equip you with the knowledge you need to make informed decisions and drive meaningful results for your business.</div><br/></div>
-        <div class="para3"><b>Engaging Audiences with AI-Powered Chatbots</b><br/>In today's fast-paced digital landscape, prompt customer service is non-negotiable. AI-powered chatbots offer round-the-clock support, answering FAQs, guiding users through the sales funnel, and even personalizing recommendations based on user preferences. By delegating customer inquiries to chatbots, you not only enhance the overall user experience but also free up your team to focus on more complex tasks that require human intervention.</div>
+        <div class="para1">
+          <br />
+          <div>
+            <b>Crafting Compelling Content with AI Writing Assistants</b> <br />
+            Struggling to find the right words for your social media posts? AI
+            writing assistants are here to save the day! These intelligent tools
+            analyze your brand's voice, suggest relevant hashtags, and even
+            provide content ideas based on trending topics. Whether you're
+            drafting a captivating caption or brainstorming ideas for your next
+            campaign, AI writing assistants empower you to create content that
+            resonates with your audience effortlessly.
+          </div>
+          <br />
+        </div>
+        <div class="para2">
+          <br />
+          <div>
+            <b>Analyzing Performance Metrics with AI Analytics Tools</b>
+            <br />
+            Understanding your social media performance is key to refining your
+            strategy and maximizing your ROI. AI analytics tools take the
+            guesswork out of data analysis by providing actionable insights into
+            your audience demographics, engagement metrics, and content
+            performance. From identifying top-performing posts to predicting
+            future trends, these tools equip you with the knowledge you need to
+            make informed decisions and drive meaningful results for your
+            business.
+          </div>
+          <br />
+        </div>
+        <div class="para3">
+          <b>Engaging Audiences with AI-Powered Chatbots</b>
+          <br />
+          In today's fast-paced digital landscape, prompt customer service is
+          non-negotiable. AI-powered chatbots offer round-the-clock support,
+          answering FAQs, guiding users through the sales funnel, and even
+          personalizing recommendations based on user preferences. By delegating
+          customer inquiries to chatbots, you not only enhance the overall user
+          experience but also free up your team to focus on more complex tasks
+          that require human intervention.
+        </div>
+        <div class="secondImgartt">
+          <img
+            src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1714712972/Screenshot_2024-05-03_103750_kjohkd.png"
+            alt="blog images"
+            class="secondImgart"
+          />
+        </div>
+        <div class="para3">
+          <b>Engaging Audiences with AI-Powered Chatbots</b>
+          <br />
+          In today's fast-paced digital landscape, prompt customer service is
+          non-negotiable. AI-powered chatbots offer round-the-clock support,
+          answering FAQs, guiding users through the sales funnel, and even
+          personalizing recommendations based on user preferences. By delegating
+          customer inquiries to chatbots, you not only enhance the overall user
+          experience but also free up your team to focus on more complex tasks
+          that require human intervention.
+        </div>
+        <div class="para4"></div>
+        <div class="para4"><b>Conclusion: Embracing the Future of Social Media Management</b><br/>In conclusion, delegating social media tasks to AI isn't just a trend – it's a strategic imperative for businesses looking to thrive in the digital age. From streamlining scheduling and content creation to analyzing performance metrics and engaging with audiences, AI empowers you to elevate your online presence and stay ahead of the competition. So why wait? Embrace the future of social media management today and unlock the full potential of your online brand!</div>
       </div>
       {/* PopularPost.jsx */}
     </div>

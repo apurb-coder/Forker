@@ -33,6 +33,10 @@
 
 }
 
+.para3, .para4 {
+  padding-top: 1.5rem;
+}
+
 .quote {
   padding-left: 20px;
   position: relative;
@@ -55,4 +59,21 @@
 .quoteline {
   color: #666;
   font-family: Gilroy-RegularItalic,sans-serif;
+}
+
+.secondImgartt {
+  align-items: center;
+  border-radius: 1rem;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.secondImgart {
+  border-radius: 1rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
