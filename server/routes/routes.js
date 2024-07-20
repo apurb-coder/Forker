@@ -17,7 +17,6 @@ TODO:
 // GET request for /recent-posts endpoint
 router.get("/recent-posts", async (req, res) => {
   try {
-    // Define the fields to be returned in the JSON response
     const fieldsToReturn = {
       blogNumber: 1,
       createdAt: 1,
@@ -27,7 +26,7 @@ router.get("/recent-posts", async (req, res) => {
       titleImage: 1,
     };
 
-    // Sort the blog posts by createdAt field in descending order (most recent first)
+    // -1 matlab descending order (most recent first)
     const recentPosts = await BlogPost.find({}, fieldsToReturn).sort({ createdAt: -1 }).limit(9);
 
     res.status(200).json({
