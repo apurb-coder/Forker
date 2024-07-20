@@ -24,7 +24,7 @@ const BlogPage = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
           {/* Title over the Article Image */}
-          Delegating Social Media Tasks to AI
+          Lorem ipsum dolor sit, amet consectetur adipisicing
         </div>
       </div>
       {/* Author and details */}
@@ -41,107 +41,71 @@ const BlogPage = () => {
       </div>
       {/* Title */}
       <div className="text-[#666] font-bold">
-        Delegating Social Media Tasks to AI
+        Lorem ipsum dolor, sit amet consectetur adipisicing
       </div>
       {/* Articles */}
       <div>
         <div class="para1">
           <br />
           <div>
-            In today's digital age, maintaining a vibrant social media presence
-            is crucial for businesses and individuals alike. However, the
-            demands of crafting engaging content, scheduling posts, and
-            analyzing metrics can be overwhelming. Enter artificial intelligence
-            (AI) – the game-changer that's revolutionizing how we manage our
-            online presence. Let's delve into how delegating social media tasks
-            to AI can transform your strategy and streamline your workload.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis excepturi animi quia architecto necessitatibus sint nulla cupiditate nisi eius? Quasi quidem error adipisci earum quae ex amet quas voluptate. Quas sunt eum quasi neque vitae inventore, repellendus, aspernatur modi, sint deserunt nobis? Distinctio aliquid, neque hic libero corrupti necessitatibus optio.
           </div>
           <br />
         </div>
         <div class="para1">
           <br />
           <div>
-            <b>Unlocking Efficiency with AI-Powered Schedulers</b> <br /> Say
-            goodbye to manual scheduling and hello to AI-powered schedulers!
-            These innovative tools like Hootsuite, Magic Studio, Wordtune etc
-            analyze your audience's behavior, optimize posting times, and ensure
-            your content reaches its maximum potential. By delegating this task
-            to AI, you free up valuable time to focus on creating quality
-            content and engaging with your audience in real-time. Plus, with
-            advanced features like post recycling and cross-platform scheduling,
-            you'll never miss an opportunity to connect with your followers.
+            <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, blanditiis?</b> <br /> Say
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium qui commodi nostrum minus dignissimos repellat esse quaerat doloremque consequuntur ut corporis harum perferendis est enim distinctio maxime quisquam, adipisci vitae. Dicta pariatur ducimus, praesentium mollitia veniam odit modi magni nihil maxime dolores odio. Veniam repellat omnis reiciendis, distinctio aliquid iste.
           </div>
           <br />
         </div>
         <div class="quote">
           <div class="quoteline">
-            Empower your social media strategy by delegating tasks to AI,
-            freeing your time to focus on creativity and engagement while
-            algorithms handle the rest.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias ipsum facilis vel aliquam error, rerum earum neque cupiditate blanditiis?
           </div>
         </div>
         <div class="quoteby"></div>
         <div class="para1">
           <br />
           <div>
-            <b>Crafting Compelling Content with AI Writing Assistants</b> <br />
-            Struggling to find the right words for your social media posts? AI
-            writing assistants are here to save the day! These intelligent tools
-            analyze your brand's voice, suggest relevant hashtags, and even
-            provide content ideas based on trending topics. Whether you're
-            drafting a captivating caption or brainstorming ideas for your next
-            campaign, AI writing assistants empower you to create content that
-            resonates with your audience effortlessly.
+            <b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, rem.</b> <br />
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, tenetur facere? Repellendus, maiores. Saepe voluptatem quaerat non vel deserunt. Sed architecto qui quas quidem dolore libero ad at optio, accusantium voluptatem accusamus ducimus placeat, eligendi ut recusandae deleniti ipsa nobis eos quo distinctio. Explicabo cumque exercitationem sed facere adipisci illo!
           </div>
           <br />
         </div>
         <div class="para2">
           <br />
           <div>
-            <b>Analyzing Performance Metrics with AI Analytics Tools</b>
+            <b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, esse.</b>
             <br />
-            Understanding your social media performance is key to refining your
-            strategy and maximizing your ROI. AI analytics tools take the
-            guesswork out of data analysis by providing actionable insights into
-            your audience demographics, engagement metrics, and content
-            performance. From identifying top-performing posts to predicting
-            future trends, these tools equip you with the knowledge you need to
-            make informed decisions and drive meaningful results for your
-            business.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis consectetur architecto, velit iusto molestiae nemo et, enim atque beatae minima temporibus fugiat dolor? Voluptate, nesciunt distinctio! Ut delectus, aut temporibus corrupti quas eius. Delectus iste illum sed vero. Illo ex fugit sit error ad autem voluptates, blanditiis deleniti quia laborum.
           </div>
           <br />
         </div>
         <div class="para3">
-          <b>Engaging Audiences with AI-Powered Chatbots</b>
+          <b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, error!</b>
           <br />
-          In today's fast-paced digital landscape, prompt customer service is
-          non-negotiable. AI-powered chatbots offer round-the-clock support,
-          answering FAQs, guiding users through the sales funnel, and even
-          personalizing recommendations based on user preferences. By delegating
-          customer inquiries to chatbots, you not only enhance the overall user
-          experience but also free up your team to focus on more complex tasks
-          that require human intervention.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui reprehenderit facere nesciunt neque eaque. Sequi aperiam quam doloremque nulla? Ullam porro, doloremque hic saepe dignissimos quis atque error incidunt placeat repellendus nesciunt odio nulla, at ratione reprehenderit. Facilis, magnam sunt, eveniet quia consectetur dolore sequi quaerat in deserunt corporis rem.
         </div>
         <div class="secondImgartt">
           <img
-            src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1714712972/Screenshot_2024-05-03_103750_kjohkd.png"
+            src="https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="blog images"
             class="secondImgart"
           />
         </div>
         <div class="para3">
-          <b>Engaging Audiences with AI-Powered Chatbots</b>
+          <b>Lorem ipsum dolor sit amet.</b>
           <br />
-          In today's fast-paced digital landscape, prompt customer service is
-          non-negotiable. AI-powered chatbots offer round-the-clock support,
-          answering FAQs, guiding users through the sales funnel, and even
-          personalizing recommendations based on user preferences. By delegating
-          customer inquiries to chatbots, you not only enhance the overall user
-          experience but also free up your team to focus on more complex tasks
-          that require human intervention.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos cumque ab perspiciatis ipsam rerum iusto! Magni sapiente deserunt modi itaque pariatur inventore aliquid cupiditate.
         </div>
         <div class="para4"></div>
-        <div class="para4"><b>Conclusion: Embracing the Future of Social Media Management</b><br/>In conclusion, delegating social media tasks to AI isn't just a trend – it's a strategic imperative for businesses looking to thrive in the digital age. From streamlining scheduling and content creation to analyzing performance metrics and engaging with audiences, AI empowers you to elevate your online presence and stay ahead of the competition. So why wait? Embrace the future of social media management today and unlock the full potential of your online brand!</div>
+        <div class="para4">
+          <b>Conclusion: Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
+          <br />
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptate quod, repellat iure cum quidem officia temporibus ea, dolorem nulla ducimus delectus quibusdam explicabo hic unde quo quas? Excepturi expedita dignissimos labore temporibus maiores et fugit natus, consequuntur praesentium, corporis provident aut ipsum reprehenderit cumque corrupti asperiores nihil officiis numquam!
+        </div>
       </div>
       {/* PopularPost.jsx */}
     </div>
