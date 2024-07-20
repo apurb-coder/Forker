@@ -1,14 +1,69 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
+import moment from "moment";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const RecentPost = () => {
-  //Impotant 
+  const navigate = useNavigate();
+  const { blogNumber } = useParams();
+  const [recentPosts, setRecentPosts] = useState(null);
+
+  const handleClickPost = (blognum) => {
+    console.log("Clicked blog post:", blognum);
+    navigate(`/recent-posts/${blognum}`);
+  };
+
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/recent-posts`
+        );
+        setRecentPosts(response?.data?.data);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlogData();
+  }, [blogNumber]);
+
+  console.log(recentPosts);
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Recent Posts</div>
-      <div className="grid grid-rows-3 pt-[0.5rem]">
+      <div className="grid grid-rows-3 grid-flow-col gap-4 pt-10">
         {/* Recent Post will generate inside this */}
+        {recentPosts?.map((post) => (
+          <div>
+            <div
+              className="boox hover:cursor-pointer"
+              key={post?.id}
+              onClick={() => handleClickPost(post?.BlogNumber)}
+            >
+              <div className="imagee">
+                {/* titleImage */}
+                <img
+                  src={post?.titleImage}
+                  alt="title Image"
+                  className="rounded-[2rem]"
+                />
+              </div>
+              <div className="author text-[#fd7a33] font-bold pt-3">
+                {" "}
+                by {post?.authorName} -{" "}
+                {moment(post?.createdAt).format("D MMMM YYYY")}
+              </div>
+              <div className="ins">{post?.title}</div>
+              <p>Lorem, ipsum dolor.</p>
+              <div className="text-[#fd7a33] underline font-semibold">
+                Read More...
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       {/* Pagination buttons */}
       <div className="mt-[3rem] space-x-2 flex justify-center">
@@ -28,6 +83,6 @@ const RecentPost = () => {
       </div>
     </div>
   );
-}
+};
 
-export default RecentPost
+export default RecentPost;

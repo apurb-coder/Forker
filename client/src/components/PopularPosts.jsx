@@ -1,15 +1,19 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import moment from "moment";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-
 const PopularPosts = () => {
-  //Impotant
-   const { blogNumber } = useParams();
-   const [popularPosts,setPopularPosts] = useState(null)
+  const navigate = useNavigate();
+  const { blogNumber } = useParams();
+  const [popularPosts, setPopularPosts] = useState(null);
+
+  const handleClickPost = (blognum) => {
+    console.log("Clicked blog post:", blognum);
+    navigate(`/blogs/${blognum}`);
+  };
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -17,15 +21,15 @@ const PopularPosts = () => {
         const response = await axios.get(
           `${import.meta.env.VITE_BACKEND_URL}/popular-posts`
         );
-        setPopularPosts(response?.data?.data); // handled useState() asynchronous nature, TIPS: set the directly from response instead of assigning varibale indirectly
-        // console.log(response.data.data);
+        setPopularPosts(response?.data?.data);
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }
     };
-    
+
     fetchBlogData();
-  }, []);
+  }, [blogNumber]);
+
   console.log(popularPosts);
   return (
     <div className="flex flex-col mt-14">
@@ -34,7 +38,11 @@ const PopularPosts = () => {
         {/* Recent Post will generate inside this */}
         {popularPosts?.map((post) => (
           <div>
-            <a href="" className="boox" key={post.id}>
+            <div
+              className="boox hover:cursor-pointer"
+              key={post?.id}
+              onClick={() => handleClickPost(post?.BlogNumber)}
+            >
               <div className="imagee">
                 {/* titleImage */}
                 <img
@@ -53,7 +61,7 @@ const PopularPosts = () => {
               <div className="text-[#fd7a33] underline font-semibold">
                 Read More...
               </div>
-            </a>
+            </div>
           </div>
         ))}
       </div>
