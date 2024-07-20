@@ -40,7 +40,10 @@ const HeroSection = () => {
 
   return (
     <div className="grid grid-rows-2 grid-cols-2 gap-4 h-[393px] mt-20">
-      <div onClick={() => handleClickPost(post1?.id)} className="">
+      <div
+        onClick={() => handleClickPost(post1?.BlogNumber)}
+        className="hover:cursor-pointer"
+      >
         <div className="">
           <img
             src={post1?.titleImage}
@@ -58,7 +61,10 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="">
-        <div onClick={() => handleClickPost(post2?.id)} className="mb-3">
+        <div
+          onClick={() => handleClickPost(post2?.BlogNumber)}
+          className="mb-3 hover:cursor-pointer"
+        >
           <div className="flex space-x-2">
             <div className="">
               <img
@@ -77,7 +83,11 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div href="" onClick={() => handleClickPost(post3?.id)}>
+        <div
+          href=""
+          onClick={() => handleClickPost(post3?.BlogNumber)}
+          className="hover:cursor-pointer"
+        >
           <div className="flex space-x-2">
             <div>
               <img
