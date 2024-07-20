@@ -73,7 +73,7 @@ router.get("/popular-posts", async (req, res) => {
 // from client side send with a ?blogNumber=number
 router.get("/blog-page", async (req, res) => {
   try {
-    const blogNumber = parseInt(req.query.blogNumber);
+    const blogNumber = Number(req.query.blogNumber);
 
     if (!blogNumber) {
       return res.status(400).json({
@@ -84,7 +84,7 @@ router.get("/blog-page", async (req, res) => {
 
     
 
-    const blogPost = await BlogPost.findOne({ blogNumber });
+    const blogPost = await BlogPost.findOne({ BlogNumber : blogNumber });
 
     if (!blogPost) {
       return res.status(404).json({

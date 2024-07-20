@@ -47,7 +47,7 @@ function getRandomDateRange() {
 // Number of times to save the new post in the database
 const numberOfPosts = 50; // Replace with the desired number of posts
 
-for (let i = 0; i < numberOfPosts; i++) {
+for (let i = 1; i <= numberOfPosts; i++) {
   const newPost = new BlogPost({
     title: "Lorem ipsum dolor sit, amet consectetur adipisicing",
     authorName: "Apurb",
