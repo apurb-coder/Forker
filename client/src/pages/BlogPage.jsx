@@ -73,6 +73,7 @@ const BlogPage = () => {
         className="article-content"
         dangerouslySetInnerHTML={{ __html: sanitizedContent }}
       />
+      {/*TODO:  Popular posts component */}
     </div>
   );
 };
