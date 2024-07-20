@@ -12,7 +12,7 @@ const RecentPost = () => {
 
   const handleClickPost = (blognum) => {
     console.log("Clicked blog post:", blognum);
-    navigate(`/recent-posts/${blognum}`);
+    navigate(`/blogs/${blognum}`);
   };
 
   useEffect(() => {

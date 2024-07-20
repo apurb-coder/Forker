@@ -58,7 +58,7 @@ const PopularPosts = () => {
                 {moment(post?.createdAt).format("D MMMM YYYY")}
               </div>
               <div className="ins">{post?.title}</div>
-              <p>Lorem, ipsum dolor.{post?.BlogNumber}</p>
+              <p>Lorem, ipsum dolor.</p>
               <div className="text-[#fd7a33] underline font-semibold">
                 Read More...
               </div>
