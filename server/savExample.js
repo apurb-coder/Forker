@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import BlogPost from "./models/articles.model.js"
+import BlogPost from "./models/articles.model.js";
 
 // Connect to your MongoDB database
 mongoose.connect("mongodb://localhost:27017/blogDB", {
@@ -7,11 +7,20 @@ mongoose.connect("mongodb://localhost:27017/blogDB", {
   useUnifiedTopology: true,
 });
 
-const newPost = new BlogPost({
-  title: "Lorem ipsum dolor sit, amet consectetur adipisicing",
-  authorName: "Apurb",
-  content: `
-    <div class="para1">
+// Function to generate a random number between min and max
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Number of times to save the new post in the database
+const numberOfPosts = 50; // Replace with the desired number of posts
+
+for (let i = 0; i < numberOfPosts; i++) {
+  const newPost = new BlogPost({
+    title: "Lorem ipsum dolor sit, amet consectetur adipisicing",
+    authorName: "Apurb",
+    content: `
+      <div class="para1">
           <br />
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis excepturi animi quia architecto necessitatibus sint nulla cupiditate nisi eius? Quasi quidem error adipisci earum quae ex amet quas voluptate. Quas sunt eum quasi neque vitae inventore, repellendus, aspernatur modi, sint deserunt nobis? Distinctio aliquid, neque hic libero corrupti necessitatibus optio.
@@ -72,16 +81,20 @@ const newPost = new BlogPost({
           <br />
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptate quod, repellat iure cum quidem officia temporibus ea, dolorem nulla ducimus delectus quibusdam explicabo hic unde quo quas? Excepturi expedita dignissimos labore temporibus maiores et fugit natus, consequuntur praesentium, corporis provident aut ipsum reprehenderit cumque corrupti asperiores nihil officiis numquam!
         </div>
-  `,
-  titleImage: "url_to_title_image.jpg",
-});
-
-newPost
-  .save()
-  .then(() => {
-    console.log("Blog post saved successfully!");
-    mongoose.connection.close(); // Close the connection when done
-  })
-  .catch((err) => {
-    console.error("Error saving blog post:", err);
+    `,
+    titleImage:
+      "https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    like: getRandomNumber(10, 200), // Generate a random number of likes
   });
+
+  newPost
+    .save()
+    .then(() => {
+      console.log("Blog post saved successfully!");
+    })
+    .catch((err) => {
+      console.error("Error saving blog post:", err);
+    });
+}
+
+mongoose.connection.close(); // Close the connection when done
