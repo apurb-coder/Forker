@@ -1,30 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ArrowLogo from "../assets/arrow_wxeel0.jpg";
 
 const BlogPage = () => {
   const { blogNumber } = useParams();
+  const [blogData, setBlogData] = useState(null);
   // when page 1st reloads call api
 
-  useEffect(() => {
-    const fetchBlogData = async () => {
-      try {
-        const response = await axios.get(
-          `${
-            import.meta.env.VITE_backend_url
-          }/blog-page?blogNumber=${blogNumber}`
-        );
-        const blogData = response.data.data;
-        console.log(blogData);
-      } catch (error) {
-        console.error("Error fetching blog data:", error);
-      }
-    };
+   useEffect(() => {
+     const fetchBlogData = async () => {
+       try {
+         const response = await axios.get(
+           `${
+             import.meta.env.VITE_BACKEND_URL
+           }/blog-page?blogNumber=${blogNumber}`
+         );
+         
+         setBlogData(response.data.data); // directly update , assign to other variables : solved useState Asynchronous update problem
+        //  console.log("API response:", blogData); // Check the response data structure
+       } catch (error) {
+         console.error("Error fetching blog data:", error);
+       }
+     };
 
-    fetchBlogData();
-  }, [blogNumber]);
-  console.log(blogNumber);
+     fetchBlogData();
+   }, [blogNumber]);
+
+   // Logging the updated state
+   useEffect(() => {
+     if (blogData) {
+       console.log("Blog data updated:", blogData); // Verify the updated state
+     }
+   }, [blogData]);
+
+   console.log("Current blogNumber:", blogNumber);
+
   return (
     <div className="flex flex-col mt-16 max-w-[947px] mx-auto">
       {/* Navigation at the top */}
@@ -44,19 +55,21 @@ const BlogPage = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
           {/* Title over the Article Image */}
-          Lorem ipsum dolor sit, amet consectetur adipisicing
+          {blogData?.title}
         </div>
       </div>
       {/* Author and details */}
       <div className="flex justify-between my-3">
-        <div className="text-[#F76f32] font-semibold">Name of Author</div>
+        <div className="text-[#F76f32] font-semibold">
+          {blogData?.authorName}
+        </div>
         <div className="flex items-center space-x-4">
           <img
             src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1707285106/Frokerassets/Artboard_ne0yo2.jpg"
             alt="like icon"
             className="w-9 h-9 text-orange-500"
           />
-          <div className="">1 Likes</div>
+          <div className="">{blogData?.like} Likes</div>
         </div>
       </div>
       {/* Title */}
