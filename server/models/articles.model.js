@@ -10,10 +10,6 @@ const blogPostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  timeOfPublish: {
-    type: Date,
-    default: Date.now,
-  },
   like: {
     type: Number,
     default: 0,
