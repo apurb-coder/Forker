@@ -49,8 +49,10 @@ const numberOfPosts = 50; // Replace with the desired number of posts
 
 for (let i = 1; i <= numberOfPosts; i++) {
   const newPost = new BlogPost({
-    title: "Lorem ipsum dolor sit, amet consectetur adipisicing",
+    title: "Lorem ipsum dolor sit, amet consectetur",
     authorName: "Apurb",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis excepturi animi quia architecto necessitatibus",
     content: `
       <div class="para1">
           <br />

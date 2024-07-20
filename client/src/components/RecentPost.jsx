@@ -57,8 +57,10 @@ const RecentPost = () => {
                 by {post?.authorName} -{" "}
                 {moment(post?.createdAt).format("D MMMM YYYY")}
               </div>
-              <div className="ins">{post?.title}</div>
-              <p>Lorem, ipsum dolor.</p>
+              <div className="ins mb-2 font-semibold text-[#1a1a1a]">
+                {post?.title}
+              </div>
+              <p className="text-[#667085]">{post?.description}</p>
               <div className="text-[#fd7a33] underline font-semibold">
                 Read More...
               </div>

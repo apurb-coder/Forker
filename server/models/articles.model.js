@@ -10,6 +10,11 @@ const blogPostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description:{
+    type: String,
+    required: true,
+    maxlength: 1000,  // Max length is 1000 characters
+  },
   like: {
     type: Number,
     default: 0,

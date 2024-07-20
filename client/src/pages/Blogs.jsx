@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from "../components/HeroSection.jsx"
+import HeroSection from "../components/HeroSection"
 import RecentPost from '../components/RecentPost';
 
 const Blogs = () => {
@@ -15,7 +15,7 @@ const Blogs = () => {
           </p>
         </div>
         {/* TODO: Hero Section */}
-        {/* <HeroSection/> */}
+        <HeroSection/>
         {/* TODO: Recent Post */}
         <RecentPost />
       </div>

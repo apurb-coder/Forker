@@ -22,6 +22,7 @@ router.get("/recent-posts", async (req, res) => {
       createdAt: 1,
       authorName: 1,
       title: 1,
+      description:1,
       content: 1,
       titleImage: 1,
     };
@@ -52,6 +53,7 @@ router.get("/popular-posts", async (req, res) => {
       createdAt: 1,
       authorName: 1,
       title: 1,
+      description:1,
       content: 1,
       titleImage: 1,
     };
