@@ -6,11 +6,11 @@ const router = express.Router();
 /*
 TODO:
 
-* recent posts
-* popular posts
+* recent posts - Done
+* popular posts - Done
 * pagination api calls, number of pages
 * likes/dislikes handlers
-* get blog a certain blog post details by blogNumber field
+* get blog a certain blog post details by blogNumber field - Done
 
 */
 
@@ -70,5 +70,39 @@ router.get("/popular-posts", async (req, res) => {
   }
 });
 
+// from client side send with a ?blogNumber=number
+router.get("/blog-page", async (req, res) => {
+  try {
+    const blogNumber = parseInt(req.query.blogNumber);
+
+    if (!blogNumber) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid blogNumber parameter",
+      });
+    }
+
+    
+
+    const blogPost = await BlogPost.findOne({ blogNumber });
+
+    if (!blogPost) {
+      return res.status(404).json({
+        success: false,
+        error: "Blog post not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: blogPost,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Error fetching blog post",
+    });
+  }
+});
 
 export { router };
