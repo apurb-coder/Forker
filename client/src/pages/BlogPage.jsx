@@ -14,26 +14,16 @@ const BlogPage = () => {
   const [blogData, setBlogData] = useState(null);
   const [likeCount, setLikeCount] = useState(null);
   const [activeLike, setActiveLike] = useState(false);
-  const handleLike =  () => {
-    if (activeLike) {
-      setLikeCount((prevCount) => prevCount - 1);
-      setActiveLike((prev) => !prev);
-      axios.get(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
-      );
-    } else {
-      setLikeCount((prevCount) => prevCount + 1);
-      setActiveLike((prev) => !prev);
-      axios.get(
-        `${
-          import.meta.env.VITE_BACKEND_URL
-        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
-      );
-    }
-  };
+  
+
   useEffect(() => {
+    // Check if active like is stored in local storage
+    const storedActiveLike = localStorage.getItem("activeLike");
+
+    if (storedActiveLike!== null && storedActiveLike !== undefined) {
+      setActiveLike(JSON.parse(storedActiveLike));
+    }
+
     const fetchBlogData = async () => {
       try {
         const response = await axios.get(
@@ -50,6 +40,28 @@ const BlogPage = () => {
 
     fetchBlogData();
   }, [blogNumber]);
+
+  const handleLike = () => {
+    if (activeLike) {
+      setLikeCount((prevCount) => prevCount - 1);
+      setActiveLike(false);
+      axios.get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
+      );
+    } else {
+      setLikeCount((prevCount) => prevCount + 1);
+      setActiveLike(true);
+      axios.get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
+      );
+    }
+
+    localStorage.setItem("activeLike", JSON.stringify(!activeLike));
+  };
 
   if (!blogData) {
     return <div>Loading...</div>;
