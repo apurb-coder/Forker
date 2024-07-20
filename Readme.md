@@ -1,7 +1,7 @@
 # Blog API Documentation
 
 ## URLs
-- Frontend: [https://forker-theta.vercel.app](https://forker-theta.vercel.app)
+- Frontend: [https://forker-theta.vercel.app]([https://forker-theta.vercel.app](https://forker-ajo1.vercel.app/))
 - Backend API: [https://forker-ldzq.onrender.com](https://forker-ldzq.onrender.com)
 
 ## Screenshots
