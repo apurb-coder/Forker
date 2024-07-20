@@ -41,4 +41,34 @@ router.get("/recent-posts", async (req, res) => {
   }
 });
 
+// GET request for /popular-posts endpoint
+router.get("/popular-posts", async (req, res) => {
+  try {
+    const fieldsToReturn = {
+      blogNumber: 1,
+      like: 1,
+      createdAt: 1,
+      authorName: 1,
+      title: 1,
+      content: 1,
+      titleImage: 1,
+    };
+
+    const popularPosts = await BlogPost.find({}, fieldsToReturn)
+      .sort({ createdAt})
+      .limit(9);
+
+    res.status(200).json({
+      success: true,
+      data: popularPosts,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Error fetching popular blog posts",
+    });
+  }
+});
+
+
 export { router };
