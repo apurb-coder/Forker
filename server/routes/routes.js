@@ -53,9 +53,9 @@ router.get("/popular-posts", async (req, res) => {
       content: 1,
       titleImage: 1,
     };
-
+    // sort by -1 matlab decending order, maltab most liked post first
     const popularPosts = await BlogPost.find({}, fieldsToReturn)
-      .sort({ createdAt})
+      .sort({ like: -1 })
       .limit(9);
 
     res.status(200).json({
