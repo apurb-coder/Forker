@@ -5,6 +5,7 @@ import DOMPurify from "dompurify";
 import ArrowLogo from "../assets/arrow_wxeel0.jpg";
 
 const BlogPage = () => {
+  // important 
   const { blogNumber } = useParams();
   const [blogData, setBlogData] = useState(null);
 
