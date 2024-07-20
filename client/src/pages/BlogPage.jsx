@@ -75,7 +75,9 @@ const BlogPage = () => {
         dangerouslySetInnerHTML={{ __html: sanitizedContent }}
       />
       {/*TODO:  Popular posts component */}
-      <PopularPosts />
+      <div>
+        <PopularPosts />
+      </div>
     </div>
   );
 };

@@ -30,22 +30,31 @@ const PopularPosts = () => {
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Popular Posts</div>
-      <div className="grid grid-rows-3 pt-[0.5rem]">
+      <div className="grid grid-rows-3 grid-flow-col gap-4 pt-[0.5rem]">
         {/* Recent Post will generate inside this */}
         {popularPosts?.map((post) => (
-          <a href="" className="boox" key={post.id}>
-            <div className="imagee">{/* titleImage */}</div>
-            <div className="author">
-              {" "}
-              by {post.authorName} -{" "}
-              {moment(post.createdAt).format("D MMMM YYYY")}
-            </div>
-            <div className="ins">{post.title}</div>
-            <p>Lorem, ipsum dolor.</p>
-            <div className="text-[#fd7a33] underline font-semibold">
-              Read More...
-            </div>
-          </a>
+          <div>
+            <a href="" className="boox" key={post.id}>
+              <div className="imagee">
+                {/* titleImage */}
+                <img
+                  src={post?.titleImage}
+                  alt="title Image"
+                  className="rounded-[2rem]"
+                />
+              </div>
+              <div className="author text-[#fd7a33] font-bold">
+                {" "}
+                by {post?.authorName} -{" "}
+                {moment(post?.createdAt).format("D MMMM YYYY")}
+              </div>
+              <div className="ins">{post?.title}</div>
+              <p>Lorem, ipsum dolor.</p>
+              <div className="text-[#fd7a33] underline font-semibold">
+                Read More...
+              </div>
+            </a>
+          </div>
         ))}
       </div>
       {/* Pagination buttons */}
