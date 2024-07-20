@@ -82,7 +82,7 @@ const BlogPage = () => {
         <img
           src={blogData.titleImage}
           alt="article Img"
-          className="rounded-[2rem] h-96 w-full"
+          className="rounded-[2rem] h-96 w-full object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
