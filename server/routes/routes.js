@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import { BlogPost } from "../models/articles.model.js";
 
 const router = express.Router();
@@ -8,7 +8,7 @@ TODO:
 
 * recent posts - Done
 * popular posts - Done
-* pagination api calls, number of pages
+* pagination api calls, number of pages - Done
 * likes/dislikes handlers
 * get blog a certain blog post details by blogNumber field - Done
 
@@ -27,7 +27,9 @@ router.get("/recent-posts", async (req, res) => {
     };
 
     // -1 matlab descending order (most recent first)
-    const recentPosts = await BlogPost.find({}, fieldsToReturn).sort({ createdAt: -1 }).limit(9);
+    const recentPosts = await BlogPost.find({}, fieldsToReturn)
+      .sort({ createdAt: -1 })
+      .limit(9);
 
     res.status(200).json({
       success: true,
@@ -82,9 +84,7 @@ router.get("/blog-page", async (req, res) => {
       });
     }
 
-    
-
-    const blogPost = await BlogPost.findOne({ BlogNumber : blogNumber });
+    const blogPost = await BlogPost.findOne({ BlogNumber: blogNumber });
 
     if (!blogPost) {
       return res.status(404).json({
@@ -149,6 +149,47 @@ router.get("/blogs/pagination", async (req, res) => {
     res.status(500).json({
       success: false,
       error: "Error fetching blog posts",
+    });
+  }
+});
+
+// from client side send with a ?blogNumber=number&like=true/false
+router.get("/liked", async (req, res) => {
+  try {
+    const blogNumber = Number(req.query.blogNumber);
+    const like = req.query.like === "true"; // Convert the like parameter to a boolean
+
+    if (!blogNumber) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid blogNumber parameter",
+      });
+    }
+
+    const blogPost = await BlogPost.findOne({ BlogNumber: blogNumber });
+
+    if (!blogPost) {
+      return res.status(404).json({
+        success: false,
+        error: "Blog post not found",
+      });
+    }
+
+    if (like) {
+      blogPost.like++;
+    } else {
+      blogPost.like--;
+    }
+
+    await blogPost.save();
+
+    res.status(200).json({
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Error updating blog post",
     });
   }
 });
