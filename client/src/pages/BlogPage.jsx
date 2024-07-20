@@ -6,10 +6,30 @@ import DOMPurify from "dompurify";
 import ArrowLogo from "../assets/arrow_wxeel0.jpg";
 
 const BlogPage = () => {
-  // important 
+  // important
   const { blogNumber } = useParams();
   const [blogData, setBlogData] = useState(null);
   const [likeCount, setLikeCount] = useState(null);
+  const [activeLike, setActiveLike] = useState(false);
+  const handleLike =  () => {
+    if (toggleLikeCount) {
+      setLikeCount((prevCount) => prevCount - 1);
+      setActiveLike((prev) => !prev);
+      axios.get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
+      );
+    } else {
+      setLikeCount((prevCount) => prevCount + 1);
+      setActiveLike((prev) => !prev);
+      axios.get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/liked?blogNumber=${blogNumber}&like=${!activeLike}`
+      );
+    }
+  };
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
@@ -47,7 +67,7 @@ const BlogPage = () => {
         <img
           src={blogData.titleImage}
           alt="article Img"
-          className="rounded-[2rem] h-96 "
+          className="rounded-[2rem] h-96 w-full "
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
@@ -63,9 +83,10 @@ const BlogPage = () => {
           <img
             src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1707285106/Frokerassets/Artboard_ne0yo2.jpg"
             alt="like icon"
-            className="w-9 h-9 text-orange-500"
+            className="w-9 h-9 text-orange-500 hover:cursor-pointer"
+            onClick={() => handleLike(likeCount)}
           />
-          <div className="" onClick={()=>handleLike(likeCount)}>{likeCount} Likes</div>
+          <div className="">{likeCount} Likes</div>
         </div>
       </div>
       {/* Title */}
