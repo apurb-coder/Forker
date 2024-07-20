@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const blogPostSchema = new mongoose.Schema({
-  BlogNumber:{
+  BlogNumber: {
     type: Number,
     required: true,
     unique: true,
@@ -30,4 +30,4 @@ const blogPostSchema = new mongoose.Schema({
 
 const BlogPost = mongoose.model("BlogPost", blogPostSchema);
 
-module.exports = BlogPost;
+export { BlogPost };

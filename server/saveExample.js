@@ -1,11 +1,23 @@
 import mongoose from "mongoose";
-import BlogPost from "./models/articles.model.js";
+import {BlogPost} from "./models/articles.model.js";
 
-// Connect to your MongoDB database
-mongoose.connect("mongodb://localhost:27017/blogDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+
+
+// Define an async function to connect to the MongoDB database
+async function connectToDatabase() {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/blogDB", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to Mongoose database");
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
+}
+
+// Call the async function to connect to the database
+await connectToDatabase();
 
 // Function to generate a random number between min and max
 function getRandomNumber(min, max) {
@@ -84,7 +96,8 @@ for (let i = 0; i < numberOfPosts; i++) {
     `,
     titleImage:
       "https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    like: getRandomNumber(10, 200), // Generate a random number of likes
+    like: getRandomNumber(10, 200), // Generate a random number of likes,
+    BlogNumber:i,
   });
 
   newPost
@@ -97,4 +110,4 @@ for (let i = 0; i < numberOfPosts; i++) {
     });
 }
 
-mongoose.connection.close(); // Close the connection when done
+
