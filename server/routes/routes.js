@@ -18,7 +18,7 @@ TODO:
 router.get("/recent-posts", async (req, res) => {
   try {
     const fieldsToReturn = {
-      blogNumber: 1,
+      BlogNumber: 1,
       createdAt: 1,
       authorName: 1,
       title: 1,
@@ -47,7 +47,7 @@ router.get("/recent-posts", async (req, res) => {
 router.get("/popular-posts", async (req, res) => {
   try {
     const fieldsToReturn = {
-      blogNumber: 1,
+      BlogNumber: 1,
       like: 1,
       createdAt: 1,
       authorName: 1,
