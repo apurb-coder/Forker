@@ -11,6 +11,7 @@ const PopularPosts = () => {
   const [popularPosts, setPopularPosts] = useState(null);
 
   const handleClickPost = (blognum) => {
+    
     console.log("Clicked blog post:", blognum);
     navigate(`/blogs/${blognum}`);
   };
