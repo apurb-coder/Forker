@@ -24,6 +24,26 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getRandomDateRange() {
+  const startYear = 2022;
+  const endYear = new Date().getFullYear(); // Get the current year
+
+  // Generate random start date within the specified year range
+  const randomStartYear =
+    startYear + Math.floor(Math.random() * (endYear - startYear + 1));
+  const randomStartMonth = Math.floor(Math.random() * 12) + 1;
+  const randomStartDay = Math.floor(Math.random() * 28) + 1;
+
+  // Create date object for the start date
+  const startDate = new Date(
+    randomStartYear,
+    randomStartMonth - 1,
+    randomStartDay
+  );
+
+  return startDate;
+}
+
 // Number of times to save the new post in the database
 const numberOfPosts = 50; // Replace with the desired number of posts
 
@@ -97,7 +117,8 @@ for (let i = 0; i < numberOfPosts; i++) {
     titleImage:
       "https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=1790&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     like: getRandomNumber(10, 200), // Generate a random number of likes,
-    BlogNumber:i,
+    BlogNumber: i,
+    createdAt: getRandomDateRange(),
   });
 
   newPost

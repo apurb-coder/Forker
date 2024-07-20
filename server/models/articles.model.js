@@ -26,6 +26,10 @@ const blogPostSchema = new mongoose.Schema({
     type: String, // URL to the title image
     required: true,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  }
 });
 
 const BlogPost = mongoose.model("BlogPost", blogPostSchema);
