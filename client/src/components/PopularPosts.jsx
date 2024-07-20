@@ -11,9 +11,9 @@ const PopularPosts = () => {
   const [popularPosts, setPopularPosts] = useState(null);
 
   const handleClickPost = (blognum) => {
-    
     console.log("Clicked blog post:", blognum);
     navigate(`/blogs/${blognum}`);
+    window.scrollTo({ top: 0}); // Scroll to the top of the page
   };
 
   useEffect(() => {
