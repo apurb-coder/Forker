@@ -8,59 +8,72 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 const PopularPosts = () => {
   const navigate = useNavigate();
   const { blogNumber } = useParams();
-  const [popularPosts, setPopularPosts] = useState(null);
+  const [popularPosts, setPopularPosts] = useState([]);
+  const [currPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const handleClickPost = (blognum) => {
     console.log("Clicked blog post:", blognum);
     navigate(`/blogs/${blognum}`);
-    window.scrollTo({ top: 0}); // Scroll to the top of the page
+    window.scrollTo({ top: 0 });
+  };
+
+  const fetchBlogData = async (pageNumber = 1) => {
+    try {
+      const response = await axios.get(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/popular-posts?page=${pageNumber}&limit=9`
+      );
+      setPopularPosts(response.data.data);
+      setTotalPages(response.data.totalPages);
+      setCurrentPage(response.data.currentPage);
+    } catch (error) {
+      console.error("Error fetching blog data:", error);
+    }
   };
 
   useEffect(() => {
-    const fetchBlogData = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/popular-posts`
-        );
-        setPopularPosts(response?.data?.data);
-      } catch (error) {
-        console.error("Error fetching blog data:", error);
-      }
-    };
-
     fetchBlogData();
-  }, [blogNumber]);
+  }, []);
 
-  console.log(popularPosts);
+  const getPrevPage = () => {
+    if (currPage > 1) {
+      fetchBlogData(currPage - 1);
+    }
+  };
+
+  const getNextPage = () => {
+    if (currPage < totalPages) {
+      fetchBlogData(currPage + 1);
+    }
+  };
+
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Popular Posts</div>
       <div className="grid grid-rows-3 grid-flow-col gap-4 pt-10">
-        {/* Recent Post will generate inside this */}
-        {popularPosts?.map((post) => (
-          <div>
+        {popularPosts.map((post) => (
+          <div key={post._id}>
             <div
               className="boox hover:cursor-pointer"
-              key={post?.id}
-              onClick={() => handleClickPost(post?.BlogNumber)}
+              onClick={() => handleClickPost(post.BlogNumber)}
             >
               <div className="imagee">
-                {/* titleImage */}
                 <img
-                  src={post?.titleImage}
+                  src={post.titleImage}
                   alt="title Image"
                   className="rounded-[2rem]"
                 />
               </div>
               <div className="author text-[#fd7a33] font-bold pt-3">
-                {" "}
-                by {post?.authorName} -{" "}
-                {moment(post?.createdAt).format("D MMMM YYYY")}
+                by {post.authorName} -{" "}
+                {moment(post.createdAt).format("D MMMM YYYY")}
               </div>
               <div className="ins mb-2 font-semibold text-[#1a1a1a]">
-                {post?.title}
+                {post.title}
               </div>
-              <p className="text-[#667085]">{post?.description}</p>
+              <p className="text-[#667085]">{post.description}</p>
               <div className="text-[#fd7a33] underline font-semibold">
                 Read More...
               </div>
@@ -68,19 +81,27 @@ const PopularPosts = () => {
           </div>
         ))}
       </div>
-      {/* Pagination buttons */}
       <div className="mt-[3rem] space-x-2 flex justify-center">
-        <button className="border-[1px] border-gray-400 p-1 text-gray-600 rounded-full font-bold">
+        <button
+          className="border-[1px] border-gray-400 p-1 text-gray-600 rounded-full font-bold"
+          onClick={getPrevPage}
+          disabled={currPage === 1}
+        >
           <NavigateBeforeIcon />
         </button>
-        {/* TODO: Generate Number of pages through API calls, if current page==1 disable left arrow, if current page==last disable right arrow */}
         <button className="border-[1px] border-gray-400 px-3 py-1 text-gray-600 rounded-full">
-          1
+          {currPage}
         </button>
-        <button className="border-[1px] border-gray-400 px-3 py-1 text-gray-600 rounded-full">
-          2
-        </button>
-        <button className="border-[1px] border-gray-400 p-1 text-gray-600 rounded-full font-bold">
+        {currPage < totalPages && (
+          <button className="border-[1px] border-gray-400 px-3 py-1 text-gray-600 rounded-full">
+            {currPage + 1}
+          </button>
+        )}
+        <button
+          className="border-[1px] border-gray-400 p-1 text-gray-600 rounded-full font-bold"
+          onClick={getNextPage}
+          disabled={currPage === totalPages}
+        >
           <NavigateNextIcon />
         </button>
       </div>
