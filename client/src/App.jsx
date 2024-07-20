@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import Home from "./pages/Home.jsx"
 import DiscoverFroker from "./pages/DiscoverFroker.jsx"
 import Blogs from "./pages/Blogs.jsx"
+import BlogPage from "./pages/BlogPage.jsx"
 import NavBar from "./components/NavBar.jsx"
 import Footer from './components/Footer.jsx'
 
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/froker" element={<DiscoverFroker/>} />
         <Route path="/blogs" element={<Blogs/>} />
+        <Route path="/blogs/:blogNumber" element={<BlogPage/>} />
       </Routes>
      
       <Footer />
