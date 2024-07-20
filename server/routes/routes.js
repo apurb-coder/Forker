@@ -1,5 +1,5 @@
 import express from 'express';
-import blogModel from "../models/articles.model.js"
+import { BlogPost } from "../models/articles.model.js";
 
 const router = express.Router();
 
@@ -13,6 +13,33 @@ TODO:
 * get blog a certain blog post details by blogNumber field
 
 */
-router.post('/posts', (req,res)=>{
 
-})
+// GET request for /recent-posts endpoint
+router.get("/recent-posts", async (req, res) => {
+  try {
+    // Define the fields to be returned in the JSON response
+    const fieldsToReturn = {
+      blogNumber: 1,
+      createdAt: 1,
+      authorName: 1,
+      title: 1,
+      content: 1,
+      titleImage: 1,
+    };
+
+    // Sort the blog posts by createdAt field in descending order (most recent first)
+    const recentPosts = await BlogPost.find({}, fieldsToReturn).sort({ createdAt: -1 }).limit(9);
+
+    res.status(200).json({
+      success: true,
+      data: recentPosts,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: "Error fetching recent blog posts",
+    });
+  }
+});
+
+export { router };
