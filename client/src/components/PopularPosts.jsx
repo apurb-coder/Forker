@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import moment from "moment";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
@@ -34,7 +35,11 @@ const PopularPosts = () => {
         {popularPosts?.map((post) => (
           <a href="" className="boox" key={post.id}>
             <div className="imagee">{/* titleImage */}</div>
-            <div className="author">{post.author}</div>
+            <div className="author">
+              {" "}
+              by {post.authorName} -{" "}
+              {moment(post.createdAt).format("D MMMM YYYY")}
+            </div>
             <div className="ins">{post.title}</div>
             <p>Lorem, ipsum dolor.</p>
             <div className="text-[#fd7a33] underline font-semibold">
