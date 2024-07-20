@@ -1,8 +1,10 @@
 import React from "react";
+import {useParams} from "react-router-dom"
 import ArrowLogo from "../assets/arrow_wxeel0.jpg"
 
 const BlogPage = () => {
-  
+  const { blogNumber } = useParams();
+  console.log(blogNumber)
   return (
     <div className="flex flex-col mt-16 max-w-[947px] mx-auto">
       {/* Navigation at the top */}
@@ -22,7 +24,7 @@ const BlogPage = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
           {/* Title over the Article Image */}
-          Lorem ipsum dolor sit
+          Delegating Social Media Tasks to AI
         </div>
       </div>
       {/* Author and details */}
