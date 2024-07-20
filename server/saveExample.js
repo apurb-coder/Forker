@@ -1,15 +1,18 @@
 import mongoose from "mongoose";
 import {BlogPost} from "./models/articles.model.js";
+import dotenv from "dotenv";
 
-
-
+dotenv.config();
 // Define an async function to connect to the MongoDB database
 async function connectToDatabase() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/blogDB", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(
+      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.ttwbtag.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
     console.log("Connected to Mongoose database");
   } catch (error) {
     console.log(`Error: ${error.message}`);

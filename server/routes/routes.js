@@ -114,11 +114,11 @@ router.get("/blogs/pagination", async (req, res) => {
     const limit = Number(req.query.limit) || 1; // generally ask for 9 limit
 
     const fieldsToReturn = {
-      blogNumber: 1,
-      like: 1,
+      BlogNumber: 1,
       createdAt: 1,
       authorName: 1,
       title: 1,
+      description: 1,
       content: 1,
       titleImage: 1,
     };

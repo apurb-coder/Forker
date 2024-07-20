@@ -19,10 +19,13 @@ const user = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 
 // Connect to your MongoDB database
-mongoose.connect("mongodb://localhost:27017/blogDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.ttwbtag.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 app.listen(PORT, (error)=>{
     if(error) throw error;

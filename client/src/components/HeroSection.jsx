@@ -8,7 +8,6 @@ const HeroSection = () => {
   const [post1, setPost1] = useState(null);
   const [post2, setPost2] = useState(null);
   const [post3, setPost3] = useState(null);
-
   const handleClickPost = (blognum) => {
     console.log("Clicked blog post:", blognum);
     navigate(`/blogs/${blognum}`);
