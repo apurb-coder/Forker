@@ -30,7 +30,7 @@ const PopularPosts = () => {
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Popular Posts</div>
-      <div className="grid grid-rows-3 grid-flow-col gap-4 pt-[0.5rem]">
+      <div className="grid grid-rows-3 grid-flow-col gap-4 pt-10">
         {/* Recent Post will generate inside this */}
         {popularPosts?.map((post) => (
           <div>
@@ -43,7 +43,7 @@ const PopularPosts = () => {
                   className="rounded-[2rem]"
                 />
               </div>
-              <div className="author text-[#fd7a33] font-bold">
+              <div className="author text-[#fd7a33] font-bold pt-3">
                 {" "}
                 by {post?.authorName} -{" "}
                 {moment(post?.createdAt).format("D MMMM YYYY")}
