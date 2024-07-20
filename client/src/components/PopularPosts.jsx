@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 const RecentPost = () => {
-  //Impotant 
+  //Impotant
   return (
     <div className="flex flex-col mt-14">
       <div className="text-3xl font-semibold text-[#3d3d3d]">Recent Posts</div>
@@ -28,6 +28,6 @@ const RecentPost = () => {
       </div>
     </div>
   );
-}
+};
 
-export default RecentPost
+export default RecentPost;
