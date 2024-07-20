@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import PopularPosts from "../components/PopularPosts";
 import DOMPurify from "dompurify";
 import ArrowLogo from "../assets/arrow_wxeel0.jpg";
 
@@ -17,7 +18,7 @@ const BlogPage = () => {
             import.meta.env.VITE_BACKEND_URL
           }/blog-page?blogNumber=${blogNumber}`
         );
-        setBlogData(response.data.data); // handled useState() asynchronous nature, TIPS: set the directly from response instead of assigning varibale indirectly
+        setBlogData(response?.data?.data); // handled useState() asynchronous nature, TIPS: set the directly from response instead of assigning varibale indirectly
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }
@@ -74,6 +75,7 @@ const BlogPage = () => {
         dangerouslySetInnerHTML={{ __html: sanitizedContent }}
       />
       {/*TODO:  Popular posts component */}
+      <PopularPosts />
     </div>
   );
 };
