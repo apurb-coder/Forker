@@ -1,7 +1,10 @@
 # Blog API Documentation
 
+> [!WARNING]
+> Backend is hosted in a free URL be kind with it. Cause API calls are slow due to the free server. If you face any problems try running it locally.
+
 ## URLs
-- Frontend: [https://forker-theta.vercel.app](https://forker-theta.vercel.app)
+- Frontend: [https://forker-theta.vercel.app](https://forker-ajo1.vercel.app/)
 - Backend API: [https://forker-ldzq.onrender.com](https://forker-ldzq.onrender.com)
 
 ## Screenshots
