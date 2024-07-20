@@ -1,12 +1,20 @@
 # Blog API Documentation
 
-## Getting Started
+## Screenshots
 
+Here are some screenshots of the application:
+
+![Screenshot 1](./screenshots/screenshot1.png)
+*Caption for Screenshot 1*
+
+![Screenshot 2](./screenshots/screenshot2.png)
+*Caption for Screenshot 2*
+
+## Getting Started
 To start the backend:
 ```
 yarn start
 ```
-
 To start the frontend:
 ```
 yarn dev
@@ -29,14 +37,14 @@ yarn dev
 ### 3. Get Specific Blog Post
 - **Endpoint:** `/blog-page`
 - **Method:** GET
-- **Query Parameters:** 
+- **Query Parameters:**
   - `blogNumber` (required): The unique number of the blog post
 - **Description:** Retrieves details of a specific blog post.
 
 ### 4. Get Paginated Blog Posts
 - **Endpoint:** `/blogs/pagination`
 - **Method:** GET
-- **Query Parameters:** 
+- **Query Parameters:**
   - `page` (optional): The page number (default: 1)
   - `limit` (optional): Number of posts per page (default: 1, recommended: 9)
 - **Description:** Retrieves a paginated list of blog posts.
@@ -44,7 +52,7 @@ yarn dev
 ### 5. Update Like Status
 - **Endpoint:** `/liked`
 - **Method:** GET
-- **Query Parameters:** 
+- **Query Parameters:**
   - `blogNumber` (required): The unique number of the blog post
   - `like` (required): Boolean value ('true' to like, 'false' to unlike)
 - **Description:** Updates the like count of a specific blog post.
