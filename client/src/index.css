@@ -13,3 +13,46 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+
+.para1, .para2, .para3, .para4 {
+  color: #666;
+
+  font-family: Gilroy-Medium,sans-serif;
+
+  font-size: clamp(1rem,1vw,2rem);
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  justify-content: center;
+
+  line-height: 160%;
+
+  text-align: justify;
+
+}
+
+.quote {
+  padding-left: 20px;
+  position: relative;
+}
+.quote::before {
+  border-left: 3px solid #fd7a33;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}
+.quoteby, .quoteline {
+  font-size: clamp(1rem,1vw,2rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(1.6rem,2vw,2rem);
+}
+.quoteline {
+  color: #666;
+  font-family: Gilroy-RegularItalic,sans-serif;
+}
