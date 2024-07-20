@@ -9,7 +9,7 @@ const BlogPage = () => {
   // important 
   const { blogNumber } = useParams();
   const [blogData, setBlogData] = useState(null);
-
+  const [likeCount, setLikeCount] = useState(null);
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
@@ -19,6 +19,7 @@ const BlogPage = () => {
           }/blog-page?blogNumber=${blogNumber}`
         );
         setBlogData(response?.data?.data); // handled useState() asynchronous nature, TIPS: set the directly from response instead of assigning varibale indirectly
+        setLikeCount(response?.data?.data?.like);
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }
@@ -46,7 +47,7 @@ const BlogPage = () => {
         <img
           src={blogData.titleImage}
           alt="article Img"
-          className="rounded-[2rem]"
+          className="rounded-[2rem] h-96 "
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-[2rem]"></div>
         <div className="absolute bottom-[4%] left-[2%] uppercase text-white font-bold text-2xl">
@@ -64,7 +65,7 @@ const BlogPage = () => {
             alt="like icon"
             className="w-9 h-9 text-orange-500"
           />
-          <div className="">{blogData.like} Likes</div>
+          <div className="" onClick={()=>handleLike(likeCount)}>{likeCount} Likes</div>
         </div>
       </div>
       {/* Title */}
