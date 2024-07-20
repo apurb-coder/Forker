@@ -80,12 +80,22 @@ const BlogPage = () => {
           {blogData.authorName}
         </div>
         <div className="flex items-center space-x-4">
-          <img
-            src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1707285106/Frokerassets/Artboard_ne0yo2.jpg"
-            alt="like icon"
-            className="w-9 h-9 text-orange-500 hover:cursor-pointer"
-            onClick={() => handleLike(likeCount)}
-          />
+          {activeLike === false ? (
+            <img
+              src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1707285106/Frokerassets/Artboard_ne0yo2.jpg"
+              alt="like icon"
+              className="w-9 h-9 text-orange-500 hover:cursor-pointer"
+              onClick={() => handleLike(likeCount)}
+            />
+          ) : (
+            <img
+              src="https://res.cloudinary.com/dapbrn8a9/image/upload/q_auto:low/v1706522062/Frokerassets/Page-1_igjnhi.jpg"
+              alt="like icon"
+              className="w-9 h-9 text-orange-500 hover:cursor-pointer"
+              onClick={() => handleLike(likeCount)}
+            />
+          )}
+
           <div className="">{likeCount} Likes</div>
         </div>
       </div>
