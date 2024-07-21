@@ -18,11 +18,11 @@ const BlogPage = () => {
 
   useEffect(() => {
     // Check if active like is stored in local storage
-    const storedActiveLike = localStorage.getItem("activeLike");
+    // const storedActiveLike = localStorage.getItem("activeLike");
 
-    if (storedActiveLike!== null && storedActiveLike !== undefined) {
-      setActiveLike(JSON.parse(storedActiveLike));
-    }
+    // if (storedActiveLike!== null && storedActiveLike !== undefined) {
+    //   setActiveLike(JSON.parse(storedActiveLike));
+    // }
 
     const fetchBlogData = async () => {
       try {
@@ -60,7 +60,7 @@ const BlogPage = () => {
       );
     }
 
-    localStorage.setItem("activeLike", JSON.stringify(!activeLike));
+    // localStorage.setItem("activeLike", JSON.stringify(!activeLike));
   };
 
   if (!blogData) {
