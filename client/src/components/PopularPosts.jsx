@@ -51,7 +51,7 @@ const PopularPosts = () => {
 
   return (
     <div className="flex flex-col mt-14">
-      <div className="text-3xl font-semibold text-[#3d3d3d]">Recent Posts</div>
+      <div className="text-3xl font-semibold text-[#3d3d3d]">Popular Post</div>
       <div className="grid grid-rows-3 grid-flow-col gap-4 pt-10">
         {popularPosts.map((post) => (
           <div
