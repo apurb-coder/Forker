@@ -23,7 +23,7 @@ const RecentPost = () => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_BACKEND_URL
-        }/blogs/pagination?page=${pageNumber}&limit=9`
+        }/blogs/recent-pagination?page=${pageNumber}&limit=9`
       );
       setRecentPosts(response.data.data);
       setTotalPages(response.data.totalPages);

@@ -23,7 +23,7 @@ const PopularPosts = () => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_BACKEND_URL
-        }/blogs/pagination?page=${pageNumber}&limit=9`
+        }/blogs/popular-pagination?page=${pageNumber}&limit=9`
       );
       setPopularPosts(response.data.data);
       setTotalPages(response.data.totalPages);
